@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanchayka-CountDown</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Philosopher&family=Ruslan+Display&family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./CSS/variables.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+  <body>
+    <header class="header-container">
+      <a class="logo-text" href="#">Sanchayka</a>
+      <div class="navbar">
+        <nav>
+          <ul>
+            <li><a id="menu-active" href="#"></a>Home</li>
+            <li><a href="#"></a>Members</li>
+            <li><a href="#"></a>Services</li>
+            <li><a href="#"></a>About us</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="menu-bar">
+        <i class="fa fa-bars" aria-hidden="true" id="menu"></i>
+      </div>
+    </header>
+    <!--- Main Section-->
+    <main>
+      <section class="banner-container">
+        <div class="container">
+          <!--left section-->
+          <div class="left-session">
+            <h1>Saji's target @800</h1>
+            <h3 class="sub-title">
+              We decieded to achieve 800 bonds c/o. Saji's name for October 2020
+            </h3>
+            <h2>very less time remaining.... think & choose fast.....</h2>
+            <div class="countdown">
+              <div class="time">
+                <div id="day"></div>
+                <span>Days</span>
+              </div>
+              <div class="time">
+                <div id="hour"></div>
+                <span>Hourse</span>
+              </div>
+              <div class="time">
+                <div id="minute"></div>
+                <span>Minutes</span>
+              </div>
+              <div class="time">
+                <div id="second"></div>
+                <span>Seconds</span>
+              </div>
+            </div>
+          </div>
+          <!-- Left Section End-->
+
+          <!-- right section -->
+          <div class="right-session">
+            <div class="card-session">
+              <div class="image-container">
+                <img src="./Images/saji.JPG" alt="Saji" />
+              </div>
+              <div class="comment">
+                <p class="comment-for-web">
+                  Hi Friends, <br />&nbsp;&nbsp;&nbsp; Please support all to
+                  acheive my target to 800 bonds <br />
+                </p>
+                <p class="comment-for-mob">
+                  Hi Friends, <br />Please support all to acheive my target to
+                  800 bonds <br />
+                </p>
+                <p class="sign">Saji Simon</p>
+              </div>
+            </div>
+            <div class="card-container">
+              <div class="image-container">
+                <img src="./Images/saji.JPG" alt="The Man" />
+              </div>
+              <p>
+                Hi Friends, Please support all to acheive my target to 800 bonds
+                <br /><span>Saji Simon</span>
+              </p>
+            </div>
+          </div>
+          <!-- right section end-->
+        </div>
+      </section>
+    </main>
+    <!--- Main Section End-->
+
+    <!--footer section-->
+    <footer>
+      <p>Designed by JCurve&copy; Technologies</p>
+    </footer>
+  </body>
+
+  <!--scripts-->
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"
+  ></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#menu").click(function () {
+        $("nav").slideToggle(500);
+      });
+    });
+  </script>
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Oct 5, 2020 23:59:59").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="demo"
+      /*document.getElementById("counter").innerHTML =
+        days + " " + hours + " " + minutes + " " + seconds + " ";
+*/
+      document.getElementById("day").innerHTML = days;
+      document.getElementById("hour").innerHTML = hours;
+      document.getElementById("minute").innerHTML = minutes;
+      document.getElementById("second").innerHTML = seconds;
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
+</html>
