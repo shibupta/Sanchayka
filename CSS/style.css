@@ -168,6 +168,9 @@ nav {
 .right-session .card-container {
   display: none;
 }
+.right-session .comment-for-web{
+    display: none;
+}
 .right-session .card-session {
   position: relative;
   top: 10em;
